@@ -1,0 +1,89 @@
+.project-card {
+  height: 400px;
+  background-color: #1f2937;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.project-img {
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.project-btns button {
+  flex: 1;
+  padding: 8px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+}
+.project-btns button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.project-btns button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.view-btn {
+  background-color: #3b82f6;
+  color: white;
+}
+.view-btn:hover {
+  background-color: #2563eb;
+}
+
+.edit-btn {
+  background-color: #10b981;
+  color: white;
+}
+.edit-btn:hover {
+  background-color: #059669;
+}
+
+.eval-btn {
+  background-color: #f59e0b;
+  color: white;
+}
+.eval-btn:hover {
+  background-color: #d97706;
+}
+ .project-details .icon,h3{
+  color:#d97706;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .project-card {
+    height: auto;
+  }
+
+  .project-img {
+    height: 180px;
+  }
+
+  .project-btns {
+    flex-wrap: wrap;
+  }
+
+  .project-btns button {
+    flex: 1 1 45%;
+    margin: 4px;
+  }
+}

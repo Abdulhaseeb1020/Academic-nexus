@@ -1,0 +1,41 @@
+.main-content{
+  
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  background-image: url("../images/login-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+.search{
+  color:aliceblue;
+}
+.h1-btn{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 14px;
+  }
+
+  .h1-btn {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}

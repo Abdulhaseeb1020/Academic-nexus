@@ -1,0 +1,428 @@
+/* =========================================================
+   THEME VARIABLES
+   These get swapped automatically whenever your useEffect sets
+   data-theme="light" or data-theme="dark" on the <html> tag.
+   ========================================================= */
+:root,
+[data-theme="light"] {
+  --bg: #f8f9fb;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --text: #1f2430;
+  --text-muted: #6b7280;
+  --accent: #7c3aed;
+  --accent-hover: #6d28d9;
+  --accent-soft: #f5f3ff;
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --sidebar-bg: #150a30;
+}
+
+[data-theme="dark"] {
+  --bg: #0f1117;
+  --surface: #191b24;
+  --border: #2b2e3a;
+  --text: #f1f1f4;
+  --text-muted: #9aa0ac;
+  --accent: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --accent-soft: #26203f;
+  --input-bg: #23252f;
+  --input-border: #3a3d4a;
+  --sidebar-bg: #0a0616;
+}
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.main-content {
+  flex: 1;
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+}
+
+.topbarS {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 16px 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbarS h2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.setting {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.setting h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.setting > p {
+  color: var(--text-muted);
+  margin: 4px 0 8px 0;
+}
+
+/* =========================================================
+   CARD
+   ========================================================= */
+.Card-component {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.card-icon {
+  color: var(--accent);
+  display: flex;
+}
+
+.card-title {
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+}
+
+/* =========================================================
+   PROFILE INFORMATION CARD
+   ========================================================= */
+.profile-information {
+  display: flex;
+  gap: 24px;
+}
+
+.profile-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+}
+
+.profile-photo button {
+  background: var(--surface);
+  color: var(--accent);
+  border: 1px solid var(--accent-soft);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.profile-photo button:hover {
+  background: var(--accent-soft);
+}
+
+.profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-info label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: -4px;
+}
+
+.profile-info input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.profile-info input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* =========================================================
+   PREFERENCES-STYLE CARD (language / date format / time zone)
+   ========================================================= */
+.setting-devs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.setting-devs:last-of-type {
+  border-bottom: none;
+}
+
+.setting-devs h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0;
+}
+
+.setting-devs p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Save button + note under the preferences card */
+.Card-component > button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  float: right;
+}
+
+.Card-component > button:hover {
+  background: var(--accent-hover);
+}
+
+/* =========================================================
+   NOTIFICATION ROWS
+   ========================================================= */
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.key {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row-label {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.row-description,
+.row-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   GENERIC ROW (used in Security card)
+   ========================================================= */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+.btn-outline {
+  background: var(--surface);
+  color: var(--accent);
+  border: 1px solid var(--accent-soft);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-outline:hover {
+  background: var(--accent-soft);
+}
+
+.btn-small {
+  font-size: 12px;
+}
+
+/* =========================================================
+   TOGGLE SWITCH
+   ========================================================= */
+.toggle {
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.toggle-on {
+  background: var(--accent);
+}
+
+.toggle-off {
+  background: #d1d5db;
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+.toggle-on .toggle-knob {
+  transform: translateX(20px);
+}
+
+/* =========================================================
+   APPEARANCE / THEME PICKER
+   ========================================================= */
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.theme-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.theme-btn:hover {
+  border-color: var(--accent);
+}
+
+.theme-btn-active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.theme-btn-dark {
+  background: #150a30;
+  color: white;
+}
+
+/* =========================================================
+   SYSTEM INFORMATION CARD
+   ========================================================= */
+.info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text);
+}
+
+.status-badge {
+  background: #d1fae5;
+  color: #047857;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* =========================================================
+   "SAVED" CONFIRMATION NOTE
+   ========================================================= */
+.saved-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #059669;
+  font-size: 13px;
+  font-weight: 500;
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .setting {
+    padding: 16px;
+  }
+
+  .profile-information {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .theme-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .setting-devs {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+}

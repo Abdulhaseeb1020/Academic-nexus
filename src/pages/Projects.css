@@ -1,0 +1,80 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+.projects-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+
+  background-image: url("../images/login-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+}
+.topbar{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+/* Existing styles... */
+
+.projects-dev {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+.Filter-dev{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+
+    background-color: #111827;
+    color: white;
+
+    border-radius: 12px;
+
+    /* Visible shadow */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .projects-layout {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 14px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .Filter-dev {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .projects-dev {
+    grid-template-columns: 1fr;
+  }
+}

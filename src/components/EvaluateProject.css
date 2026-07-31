@@ -1,0 +1,197 @@
+.Evaluation-dev{
+    width: 70%;
+    max-height: 85vh;
+    overflow-y: auto;
+     background-color: grey;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    padding: 24px 32px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+  
+}
+
+
+
+/* category cards - each with its own background */
+.innovation-dev,
+.implementation-dev,
+.documentation-dev,
+.presentation-dev{
+    border-radius: 12px;
+    padding: 12px 18px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.innovation-dev:hover,
+.implementation-dev:hover,
+.documentation-dev:hover,
+.presentation-dev:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.innovation-dev, .implementation-dev, .documentation-dev, .presentation-dev{
+   
+      background: rgba(15, 23, 42, 0.65);
+}
+
+
+.innovation.icon,
+span.innovation{
+    color: #7c3aed;
+}
+.implementaion.icon,
+span.implementation{
+    color: #16a34a;
+}
+.documentation.icon,
+span.documentation{
+    color: #ea580c;
+}
+.prestation.icon,
+span.presentation{
+    color: #db2777;
+}
+
+.icon{
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.overallScore-dev{
+    background-color: #7c3aed;
+    border-radius: 12px;
+    padding: 12px 18px;
+    text-align: center;
+}
+
+.remarks-dev textarea{
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    resize: none;
+}
+
+button{
+ width: auto;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;}
+    /* Dark overlay */
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+/* Modal box */
+.confirm-modal {
+  width: 380px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 25px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+
+  animation: popIn 0.25s ease;
+}
+
+/* Heading */
+.confirm-modal h2 {
+  margin: 0;
+  color: #1e3a8a;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+/* Message */
+.confirm-modal p {
+  margin: 18px 0 25px;
+  text-align: center;
+  color: #555;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Buttons container */
+.confirm-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Common button style */
+.confirm-buttons button {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+/* Cancel button */
+.cancel-btn {
+  background: #e5e7eb;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background: #d1d5db;
+}
+
+/* Update button */
+.update-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.update-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .Evaluation-dev {
+    width: 92%;
+    max-height: 90vh;
+    padding: 18px 20px;
+  }
+
+  .confirm-modal {
+    width: 92%;
+  }
+}

@@ -1,0 +1,229 @@
+/* Page wrapper */
+.overall-page {
+  padding: 40px 24px;
+background: transparent;
+  min-height: 100vh;
+}
+
+/* Grid of cards */
+.Card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Individual card */
+.card {
+  background-color: #1f2937;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid #edEDf3;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Name + department block */
+.image-dev {
+  border-bottom: 1px solid #f0f0f4;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+
+}
+
+.image-dev h3 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+.image-dev p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: whitesmoke
+}
+
+/* "Areas of Interest" heading */
+.card h3:not(.image-dev h3) {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color:gold;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 4px 0 10px;
+}
+
+/* Expertise tag list */
+.judge-expertise {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 0 0 18px;
+}
+
+.judge-expertise li {
+  background: #ede9ff;
+  color: #4c3fd6;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* View Profile button */
+.card button {
+  margin-top: auto;
+  align-self: flex-start;
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.card button:hover {
+  background: #574fe0;
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+.card button:active {
+  transform: scale(0.97);
+}
+
+/* No judges message */
+.no-judges {
+  text-align: center;
+  color: #8a8a95;
+  font-size: 0.95rem;
+  padding: 40px 0;
+}
+.Judge-info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.6); /* Soft dark backdrop */
+  backdrop-filter: blur(4px); /* Modern glassmorphism blur */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.info {
+background-color: rgba(15, 23, 42, 0.6);
+  width: 90%;
+  max-width: 480px;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: slideUp 0.25s ease-out;
+}
+
+.info h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: white;
+  border-bottom: 2px solid #edf2f7;
+  padding-bottom: 10px;
+}
+
+.info label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color:olive;
+  margin-top: 14px;
+  letter-spacing: 0.05em;
+}
+
+.info h3 {
+  margin: 2px 0 0 0;
+  font-size: 1.05rem;
+  color:whitesmoke;
+  font-weight: 600;
+}
+
+.info button {
+  margin-top: 24px;
+  width: 100%;
+  padding: 12px;
+  background-color: #e2e8f0;
+  color:black;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.info button:hover {
+  background-color: #e53e3e;
+  color: #ffffff;
+}
+
+/* ==========================================
+   5. Modal Animations
+   ========================================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.btnss {
+  display: flex;
+  flex-direction: row;      /* explicitly row */
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: auto;         /* push to bottom of card */
+  padding-top: 16px;        /* space from content above */
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .overall-page {
+    padding: 20px 12px;
+  }
+
+  .info {
+    padding: 20px;
+  }
+
+  .btnss {
+    gap: 16px;
+  }
+}
